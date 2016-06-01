@@ -2,16 +2,17 @@
 lock '3.5.0'
 
 set :application, 'CapistranoDemo'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :repository, 'git@github.com:tuanbinhhai/CapistranoDemo.git'
 
 # Default branch is :master
+set :branch, "master"
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, '/var/www/my_app_name'
+set :deploy_to, '/var/www/my_app_name'
 
 # Default value for :scm is :git
-# set :scm, :git
+set :scm, :git
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -34,6 +35,15 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+set :user, "tuanbinhhai"
+set :scm_passphrase, "thanhtuan230493"
+set :use_sudo, false
+set :rails_env, "development"
+set :deploy_via, :copy
+set :ssh_options, { :forward_agent => true, :port => 4321 }
+set :keep_releases, 5
+default_run_options[:pty] = true
+
 
 namespace :deploy do
 
